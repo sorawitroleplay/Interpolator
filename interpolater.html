@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <body>
+  <body>
+  <h1>Interpolator</h1>
+
+  <div style="display: flex; gap: 60px; margin-top: 20px;">
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+      <p style="font-size: 20px; margin-bottom: 8px;">X values</p>
+      <input type="number" placeholder="x1" id="x1">
+      <small>ค่า x ต่ำสุดที่รู้</small>
+      <input type="number" placeholder="x2" id="x2">
+      <small>ค่า x ที่ต้องการหา y</small>
+      <input type="number" placeholder="x3" id="x3">
+      <small>ค่า x สูงสุดที่รู้</small>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+      <p style="font-size: 20px; margin-bottom: 8px;">Y values</p>
+      <input type="number" placeholder="y1" id="y1">
+      <small>ค่า y ที่ตรงกับ x1</small>
+      <div style="height: 47px; display: flex; align-items: center; justify-content: center;">
+        <p style="color: #a855f7; font-size: 28px; margin: 0;">?</p>
+      </div>
+      <small>ค่าที่ต้องการหา</small>
+      <input type="number" placeholder="y3" id="y3">
+      <small>ค่า y ที่ตรงกับ x3</small>
+    </div>
+
+  </div>
+
+  <button onclick="calculate()">Calculate</button>
+  <p id="result"></p>
+
+</body>
+
+</body>
+    <style>
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  background: radial-gradient(ellipse at center, #2e0a5e 0%, #0a0010 70%);
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+}
+  button {
+  margin-top: 16px;
+  padding: 10px 24px;
+  font-size: 30px;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 16px #a855f7, 0 0 32px #7c3aed;
+}
+
+button:hover {
+  background: #6d28d9;
+  box-shadow: 0 0 24px #a855f7, 0 0 48px #7c3aed;
+}
+
+#result {
+  margin-top: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #e9d5ff;
+  text-shadow: 0 0 12px #a855f7, 0 0 24px #7c3aed;
+}
+
+input {
+  width: 120px;
+  padding: 12px;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #7c3aed;
+  border-radius: 6px;
+  font-size: 18px;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  box-shadow: 0 0 8px #7c3aed;
+}
+
+small {
+  color: #c4b5fd;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+  </style>  
+
+  <script>
+   function calculate() {
+  let x1 = parseFloat(document.getElementById("x1").value);
+  let x2 = parseFloat(document.getElementById("x2").value);
+  let x3 = parseFloat(document.getElementById("x3").value);
+  let y1 = parseFloat(document.getElementById("y1").value);
+  let y3 = parseFloat(document.getElementById("y3").value);
+
+  let result = y1 + (x2 - x1) * (y3 - y1) / (x3 - x1);
+
+  document.getElementById("result").innerText = "y2 = " + result;
+}
+  </script>
+</body>
+</html>
